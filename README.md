@@ -126,9 +126,11 @@ Copy `frida-server` file that compatible with android device and call the progra
 ```
 adb shell "su -c '/data/local/tmp/frida-server'"
 ``
-Then run `frida-ps -Uai|grep -i apkey'` to check the app package name and run frida command to spawn the process
+
+Then run `frida-ps -Uai|grep -i apkey` to check the app package name and run frida command to spawn the process
 ```
 frida -U -f com.example.apkey -l ./assets/frida-script/bypass.js
 ```
+
 With this, I have managed to bypass the proces and got the hidden key
 ![frida spawn](frida-spawned.png)
