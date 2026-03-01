@@ -90,8 +90,7 @@ There are two possible way that we can do to bypass this, which are
 I'll go with the first two, since I have tried crack the string several times but didn't make it.
 
 
-- [x] ### Bypass program process/ Spawn Android process with Frida
-
+#### Bypass program process/ Spawn Android process with Frida
 As I mentioned, we may collect all the string called in the app process and compare the value with hash string we got from the reversed apk file, since this is a simple app, that's would be okay to do it forcefully on all strings called on its process, and here is the final javascipt file to bypass the login process.
 
 ***bypass.js***
