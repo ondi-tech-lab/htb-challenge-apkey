@@ -83,14 +83,14 @@ And if we look at the full `MainActivity.java' file, its shows and encoding flow
 
 ## Bypass
 There are two possible way that we can do to bypass this, which are
-- Bypass the program flow by Frida (or any script injection available, I choose this one for familiarity)
+- Bypass the program flow by [Frida](https://frida.re/docs/home/) (or any script injection available, I choose this one for familiarity)
 - Modify and rebuild the apk package by replace the harcoded hash password string that we found
 - Crack the hardcoded string with tools like Hashcat (This is a hard way, and we are not gonna get into that)
 
 I'll go with the first two, since I have tried crack the string several times but didn't make it.
 
 
-#### Bypass program process/ Spawn Android process with Frida
+### Bypass program process/ Spawn Android process with Frida
 As I mentioned, we may collect all the string called in the app process and compare the value with hash string we got from the reversed apk file, since this is a simple app, that's would be okay to do it forcefully on all strings called on its process, and here is the final javascipt file to bypass the login process.
 
 ***bypass.js***
