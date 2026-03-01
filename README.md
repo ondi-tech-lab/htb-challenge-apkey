@@ -134,4 +134,4 @@ frida -U -f com.example.apkey -l ./assets/frida-script/bypass.js
 ```
 
 With this, I have managed to bypass the proces and got the hidden key
-![frida spawn](frida-spawned.png)
+![frida spawn](frida-spawned.jpg)
