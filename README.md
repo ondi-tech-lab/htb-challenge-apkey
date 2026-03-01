@@ -88,3 +88,35 @@ There are two possible way that we can do to bypass this, which are
 - Crack the hardcoded string with tools like Hashcat (This is a hard way, and we are not gonna get into that)
 
 I'll go with the first two, since I have tried crack the string several times but didn't make it.
+
+
+-[v] Bypass program process/ Spawn Android process with Frida
+As I mentioned, we may collect all the string called in the app process and compare the value with hash string we got from the reversed apk file, since this is a simple app, that's would be okay to do it forcefully on all strings called on its process, and here is the final javascipt file to bypass the login process.
+```
+Java.perform(function () {
+
+    var StringClass = Java.use("java.lang.String");
+
+    var originalEquals = StringClass.equals.overload("java.lang.Object");
+
+    StringClass.equals.overload("java.lang.Object").implementation = function (obj) {
+
+        // prevent null pointer
+        if (obj) {
+
+            var comparedValue = obj.toString();
+
+            // Target hash of the APK
+            if (comparedValue === "a2a3d412e92d896134d9c9126d756f") {
+
+                console.log("[+] Bypassing password hash comparison!");
+                return true;
+            }
+        }
+
+        // Default behaviour
+        return originalEquals.call(this, obj);
+    };
+
+});
+```
