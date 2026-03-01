@@ -125,9 +125,10 @@ Java.perform(function () {
 Copy `frida-server` file that compatible with android device and call the programm as a root via `adb` command
 ```
 adb shell "su -c '/data/local/tmp/frida-server'"
-``
+```
 
 Then run `frida-ps -Uai|grep -i apkey` to check the app package name and run frida command to spawn the process
+
 ```
 frida -U -f com.example.apkey -l ./assets/frida-script/bypass.js
 ```
