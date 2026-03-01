@@ -87,4 +87,4 @@ There are two possible way that we can do to bypass this, which are
 - Modify and rebuild the apk package by replace the harcoded hash password string that we found
 - Crack the hardcoded string with tools like Hashcat (This is a hard way, and we are not gonna get into that)
 
-I'll go with the first two, since I have tried crack the string several times but didn't made it.
+I'll go with the first two, since I have tried crack the string several times but didn't make it.
